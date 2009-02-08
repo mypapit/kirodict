@@ -1,0 +1,82 @@
+<!-- This file controls the build process.                    -->
+<!-- The most important target is the j2mepolish-target,      -->
+<!-- which controls for what devices the application should   -->
+<!-- be created and so on.                                    -->
+<!--                                                          -->
+<!-- Important: when you have no Wireless Toolkit installed   -->
+<!-- you need to define the "preverify"-attribute             -->
+<!-- of the <build>-element of the J2ME Polish task.          -->
+<!--                                                          -->
+<!-- When you call Ant from the command-line, you can         -->
+<!-- call "ant test j2mepolish" to skip the obfuscation       -->
+<!-- and to build the example for fewer handsets.             -->
+<!-- The default target builds and obfuscates the example.    -->
+<!--                                                          -->
+<!-- The full documentation can be found at                   -->
+<!-- http://www.j2mepolish.org                                -->
+<!--                                                          -->
+<!-- Have fun!                                                -->
+<project 
+	name="KiroDict" 
+	default="j2mepolish">
+	
+	<!-- import user specific properties                          -->
+	<property file="${user.name}.properties" />
+	
+	<!-- The polish.home property needs to point to the directory -->
+	<!-- containing the J2ME Polish installation.                 -->
+
+<property name="polish.home" location="D:\j2mepolish" />
+
+	<!-- import global properties                                 -->
+	<property file="${polish.home}/global.properties" />
+	<!--	<property name="polish.home" location="/home/mypapit/j2mewtk/polish" /> -->
+
+		
+	<!-- the device for the test mode - you can define it on the command-line
+	     using the -D switch, e.g. ant -Ddevice=Generic/midp2 emulator -->
+	<property name="device" value="Generic/jtwi"/>
+	<property name="devices" value="${device},Nokia/Series60E3" />
+	
+
+
+	<!-- Definition of the J2ME Polish task:                      -->
+	<taskdef name="j2mepolish" 
+		classname="de.enough.polish.ant.PolishTask" 
+		classpath="${polish.home}/lib/enough-j2mepolish-build.jar:${polish.home}/lib/jdom.jar"
+	/>
+	<target name="j2mepolish">
+		<j2mepolish>
+			<info license="GPL" 
+				name="KiroDict" 
+				vendorname="KiroStudio" 
+				description="A Light Mobile Dictionary"
+				infoUrl="http://dict.kirostudio.com"
+				icon="i.png"
+				version="1.0" 
+				jarname="kirodict-${polish.vendor}-${polish.name}.jar" 
+				copyright="Corp 2008 Mohammad Hafiz Ismail"
+			/>
+				
+				
+			<deviceRequirements>
+				<requirement name="Identifier" value="Nokia/Series60E3, Sony-Ericsson/JavaPlatform8_176x220, Motorola/V3x, Plain/jtwi, Nokia/Series40E3 " />
+			</deviceRequirements>
+			<build usePolishGui="true" fullscreen="menu">
+				
+			
+				<midlet class="testrpc" icon="i.png" name="KiroDict" />
+				<variables>
+					<!--
+					<variable name="polish.TextField.suppressDeleteCommand" value="true" if="polish.key.ClearKey:defined" />
+				-->
+				</variables>
+				<obfuscator name="ProGuard">
+					<parameter name="optimize" value="true" />
+				</obfuscator>
+			</build>
+			
+			
+		</j2mepolish>
+	</target>
+</project>
