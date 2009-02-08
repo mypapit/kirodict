@@ -1,0 +1,8 @@
+TODO List
+
+
+2009-02-08 
+-------------
+- support bluetooth
+- optimize for size
+- multi-language support

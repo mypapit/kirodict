@@ -1,0 +1,17 @@
+ChangeLog file for Kirodict
+http://kirodict.googlecode.com
+
+2009-02-08 Kirodict 1.0
+-----------------------
+- Redesigned the theme
+- clean up the code
+- optimized for speed
+- fixed sms sending code
+- Fixed bug related to error messages
+
+
+
+
+2008-10-28 Kirodict-pre
+----------------------
+- first pre-release

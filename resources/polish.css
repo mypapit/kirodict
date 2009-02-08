@@ -1,0 +1,237 @@
+colors {
+	bgcolor: #8ca6d7;
+	
+	highlightedBgColor: #aa00aa;
+	fontColor: rgb(30,85,86);
+	highlightedFontColor: white;
+	focusedBgColor:#aa00aa;
+	itemColor: #eee;
+}
+
+title {
+	padding-top:15;
+	font-color: #ffe254;
+	font-style: bold;
+	font-size: large;
+	font-face: proportional;
+	layout: expand | center;
+	text-effect: shadow;
+	background {
+			type: vertical-gradient;
+			top-color: #6699cc;
+			bottom-color: bgcolor;
+			start: 25%;
+			end: 75%;
+	}
+	border:none;
+}
+
+
+menu {
+	view-type: slide-up;
+	view-type: numbered;
+	menubar-color:#6699cc;
+	font-style: bold;
+	background {
+		type: round-rect;
+		color: #eec1e5;
+		border-width: 2;
+		border-color: highlightedBgColor;
+		
+	}
+	
+}
+
+
+
+
+
+
+
+menuItem {
+
+	padding: 2;
+	layout:horizontal-expand;
+	label-style: menuLabel;
+}
+
+menuItem:hover {
+	background-color: highlightedBgColor;
+
+	include-label: true;
+
+	
+}
+
+gauge {
+
+	view-type: gauge-horizontal-spheres;
+		gauge-horizontal-spheres-count: 12;
+		gauge-horizontal-spheres-highlight-count: 1;
+		
+		gauge-horizontal-spheres-highlight-color: highlightedBgColor;
+		gauge-horizontal-spheres-interval: 500;
+	layout: horizontal-center | horizontal-expand;
+}
+
+form {
+	padding: 10;
+	background-color:bgColor;
+	screen-change-animation: left;
+}
+alert {
+	background-color:bgColor;
+	screen-change-animation: right;
+
+}
+
+
+list {
+	padding: 5;
+	background-color: bgColor;
+	font-color:fontColor;
+	
+	layout: expand | center;
+	
+	
+	
+	
+}
+
+list:hover {
+layout: expand | center;
+
+font-color:highlightedFontColor;
+font-style:bold;
+
+background {
+		type: round-rect;
+		arc: 16;
+		arc-width: 15;
+		color:highlightedBgColor;
+	}
+
+
+}
+
+
+listitem {
+	font-color:fontColor;
+	margin: 2; /* for the border of the focused style */
+	padding: 2;
+	padding-vertical: 3;
+	padding-left: 3;
+	padding-right: 3;
+	padding-top: 10;
+	padding-bottom: 10;
+	background: none;
+	font-style: bold;
+	font-size: small;
+	layout: center;
+	
+}
+
+.mainMenuItem {
+	font-color: fontColor;
+	font-style: bold;
+	font-size: medium;
+	layout: expand | center;
+	focused-style: focusStyle;
+}
+.mainMenuItem:hover {
+	background-color: highlightedBgColor;
+	font-color:highlightedFontColor;
+	layout: expand |center
+}
+
+.focusStyle {
+layout: expand | center;
+background-color:highlightedBgColor;
+font-color:highlightedFontColor;
+
+}
+
+
+
+
+.popupChoiceGroup {
+	popup-color: fontColor;
+	popup-background-color: white;
+	focused-style: choiceGroupFocused;
+	label-style:textfieldLabel;
+	background-color: itemColor;
+	layout: left | expand;
+	border {
+		type: round-rect;
+		color: fontColor;
+		arc: 16;
+	}
+	
+}
+
+.popupChoiceItem {
+
+	margin: 1;
+	padding: 3;
+	padding-horizontal: 5;
+	font-color: fontColor;
+	font-style: bold;
+	font-style: plain;
+}
+
+
+.choiceGroupFocused {
+	padding: 3;
+	padding-horizontal: 5;
+	font-color: fontColor;
+	font-style: bold;
+	border {
+		type: round-rect;
+		color: fontColor;
+		arc: 8;
+	}
+	background-color:white; 
+
+	layout:left | expand;
+
+
+}
+
+textfield {
+	label-style:textfieldLabel;
+	background {
+		type: round-rect;
+		arc: 16;
+		arc-width: 16;
+		color: itemColor;
+		
+	}
+	
+	layout: expand;
+	
+}
+
+
+textfield:hover {
+	background-color: white;
+	layout: expand;
+	border {
+		type: round-rect;
+		color: fontColor;
+		arc: 16;
+	}
+}
+
+textfieldLabel {
+	font-style: italic | bold;
+	font-size: small;
+	layout:newline-after;
+}
+
+imageitemLabel {
+
+
+	layout:newline-after;
+
+
+}
